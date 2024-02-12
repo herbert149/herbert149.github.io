@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Feliz San Valentín!</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: pink;
+    text-align: center;
+  }
+  h1 {
+    font-size: 4.50em;
+    color: red;
+    animation: moverArribaAbajo 2s infinite alternate;	
+  }
+  
+  @keyframes moverArribaAbajo {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(10px);
+    }
+  }  
+
+  p {
+    font-size: 2em;
+    transition: font-size 0.3s ease;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  .si {
+    background-color: green;
+    color: white;
+    font-size: calc(1em + 1px);
+  }
+  .no {
+    background-color: red;
+    color: white;
+    font-size: calc(1em + 1px);
+  }
+</style>
+</head>
+<body>
+<h1>¡Feliz San Valentín Ysa!</h1>
+<img src="https://drive.google.com/thumbnail?id=1cTxXHa1_bypc-iGmREH6poaNOvVAslCb" alt="Page Image">
+<br>
+<p>¿Te gustaría que tengamos una segunda cita?</p>
+<button id="siBtn" class="btn si">SI</button>
+<button id="noBtn" class="btn no">NO</button>
+
+<script>
+  let noClicks = 0;
+
+  document.getElementById('noBtn').addEventListener('click', function() {
+    noClicks++;
+    if (noClicks > 0) {
+      this.textContent = '¿SEGURAAAAAA?';
+
+      document.getElementById('siBtn').style.fontSize = `${parseInt(window.getComputedStyle(document.getElementById('siBtn')).fontSize) + 5}px`;
+    }
+  });
+
+  document.getElementById('siBtn').addEventListener('click', function() {
+    alert('¡Me alegraste el día!\nAhí vamos coordinando :)');
+  });
+</script>
+</body>
+</html>
